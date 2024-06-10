@@ -1,0 +1,244 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0d1b2a;
+  color: #fff;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+header {
+  background-color: #0d1b2a;
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 2px solid #1e3a8a;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: slideDown 1s ease-in-out;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: #1e3a8a;
+}
+
+.container {
+  text-align: center;
+  padding: 100px 20px 60px;
+  margin: 20px auto;
+  max-width: 800px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.container.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media only screen and (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .text {
+    font-size: 16px; /* Decrease font size for better readability */
+    text-align: justify; /* Justify text for better readability */
+    width: 90%; /* Set text width */
+  }  
+
+  .image-collage {
+    width: 100%; /* Set collage width to match text */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .image-wrapper {
+    width: 100%; /* Set image wrapper width */
+  }
+
+  .image-wrapper img {
+    width: 100%; /* Make images fill the container */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+
+.about-content {
+  display: flex;
+  justify-content: flex-start; /* Align content to the start */
+  align-items: center; /* Align items vertically */
+}
+
+.text {
+  flex: 1;
+  text-align: justify;
+  margin-right: -50px; /* Add negative margin to separate text from collage */
+  margin-top: 30px; /* Add margin from the top */
+}
+
+.image-collage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px; /* Reduce gap between images */
+  max-width: calc(50% - 20px); /* Limit collage width */
+  margin-right: 20px;
+}
+
+.image-wrapper {
+  position: relative; /* Required for positioning pseudo-element */
+  width: 100%;
+  overflow: hidden; /* Hide overflow for smooth transition */
+  transition: transform 0.3s ease; /* Smooth transition for the zoom effect */
+}
+
+.image-wrapper:hover {
+  transform: scale(.9); /* Zoom effect on hover */
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  animation: fadeInUp 1s ease-in-out;
+}
+.highlight {
+  color: #1e3a8a; 
+  transition: transform 0.3s ease-in-out, color 0.3s ease; 
+}
+
+.highlight:hover {
+  transform: scale(1.5);
+  color: #fff; 
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  animation: fadeInUp 1.4s ease-in-out;
+}
+
+.buttons {
+  margin: 20px 0;
+  animation: fadeInUp 1.8s ease-in-out;
+}
+
+.buttons a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #1e3a8a;
+  padding: 10px 20px;
+  border: 2px solid #1e3a8a;
+  border-radius: 5px;
+  margin: 0 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.buttons a:hover {
+  background-color: transparent;
+  color: #1e3a8a;
+}
+
+.social-icons {
+  margin-top: 20px;
+  animation: fadeInUp 2.0s ease-in-out;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #1e3a8a;
+  font-size: 1.5em;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.social-icons i {
+  color: #1e3a8a; 
+  transition: transform 0.3s ease-in-out, color 0.3s ease; 
+}
+
+.social-icons i:hover {
+  transform: scale(1.5);
+  color: #fff;
+}
+
+footer {
+  background-color: #0d1b2a;
+  padding: 20px 0;
+  text-align: center;
+  border-top: 2px solid #1e3a8a;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #1e3a8a;
+}
+
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.animate {
+  animation: fadeInUp 1s ease-in-out;
+}
